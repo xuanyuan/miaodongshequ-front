@@ -162,7 +162,7 @@ export default {
     },
     async resendVerificationEmail() {
       let email = this.email;
-      const res = await fetch("/api/resend", {
+      const res = await fetch("/v1/resend", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -176,7 +176,9 @@ export default {
         this.errorMessage = body.message;
         this.showErrorModal = true;
       } else {
-        this.redirectToInvite(email);
+        this.showErrorModal = false;
+        this.showSuccessModal = true;
+        // this.redirectToInvite(email);
       }
     },
     async getSub(planType) {
@@ -213,6 +215,8 @@ export default {
       }
     },
     redirectToSubscribe(email) {
+      this.showSuccessModal = false;
+      
       const encodedEmail = encodeURIComponent(email);
       // const referrer = cookieManager.getRef();
       if (referrer) {
