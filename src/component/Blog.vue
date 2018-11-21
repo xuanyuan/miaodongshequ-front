@@ -325,6 +325,8 @@
   </div>
 </template>
 <script>
+import hljs from 'highlight.js/lib/highlight';
+import 'highlight.js/styles/github.css'
 export default {
   
 }
