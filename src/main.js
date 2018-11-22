@@ -28,9 +28,8 @@ Vue.use(VeeValidate, config); //一般插件都要use一下
 new Vue({
   el: '#app',
   router,
-  // template: '<App/>',
-  // components: {
-  //   App
-  // },
-  render: h => h(App)
+  template: '<App/>',
+  components: {
+    App
+  }
 });
