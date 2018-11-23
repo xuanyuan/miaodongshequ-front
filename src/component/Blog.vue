@@ -1,12 +1,12 @@
 <template>
     <div class="wrap">
     <header>
-      <a href="http://www.miaodongshequ.com" class="logo-link">
+      <a href="/home" class="logo-link">
         <img src="../assets/images/logo.png"
           alt="商标">
       </a>
       <ul class="nav nav-list">
-        <li class="nav-list-item"><a href="http://www.miaodongshequ.com" target="_self" class="nav-list-link">
+        <li class="nav-list-item"><a href="/home" target="_self" class="nav-list-link">
             <font style="vertical-align: inherit;">
               <font style="vertical-align: inherit;">订阅</font>
             </font>

@@ -32,4 +32,4 @@ new Vue({
   components: {
     App
   }
-});
+})

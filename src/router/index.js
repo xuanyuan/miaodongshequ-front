@@ -1,32 +1,25 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import Home from '../component/Home.vue';
+import Blog from '../component/Blog.vue';
+
 Vue.use(Router);
 
 const RouteList = [{
   path: '/home',
-  component: require('../component/Home.vue').default
-  // children: [{
-  //   path: '',
-  //   component: require('../component/Recommend.vue').default
-  // }, {
-  //   path: 'recommend',
-  //   component: require('../component/Recommend.vue').default
-  // }, {
-  //   path: 'discuss',
-  //   component: require('../component/Discuss.vue').default
-  // }, {
-  //   path: 'about',
-  //   component: require('../component/About.vue').default
-  // }]
+  name: 'home',
+  component: Home
 }, {
-    path: '/blog',
-    component: require('../component/Blog.vue').default
+  path: '/blog',
+  name: 'blog',
+  component: Blog
 }, {
   path: '*',
   redirect: '/home'
 }]
 
 export default new Router({
+  // base: __dirname,
   mode: 'history',
   routes: RouteList
 });
