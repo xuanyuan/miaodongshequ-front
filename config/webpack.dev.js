@@ -78,6 +78,7 @@ module.exports = {
   },
   // 插件，用于生产模板和各项功能
   plugins: [
+    new uglify(), //压缩混淆JS文件
     new htmlPlugin({
       minify: { //是对html文件进行压缩
         removeAttributeQuotes: true //removeAttrubuteQuotes是却掉属性的双引号。
