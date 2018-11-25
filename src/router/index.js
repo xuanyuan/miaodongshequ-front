@@ -1,18 +1,16 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from '../component/Home.vue';
-import Blog from '../component/Blog.vue';
 
 Vue.use(Router);
 
 const RouteList = [{
   path: '/home',
   name: 'home',
-  component: Home
+  component: () => import( /* webpackChunkName: "Home" */ '../component/Home.vue')
 }, {
   path: '/blog',
   name: 'blog',
-  component: Blog
+  component: () => import( /* webpackChunkName: "Blog" */ '../component/Blog.vue')
 }, {
   path: '*',
   redirect: '/home'

@@ -185,7 +185,6 @@ export default {
       // TODO: check email is valid.
       let email = this.email;
 
-      // const referrer = cookieManager.getRef()
       const res = await fetch("/v1/subscribe", {
         method: "POST",
         headers: {
@@ -501,62 +500,6 @@ pre {
   position: absolute;
   right: 0;
   top: 50%;
-}
-
-@font-face {
-  font-family: "Computer Modern Serif";
-  src: url(/static/fonts/cmunrm.b4fe383.eot);
-  src: url(/static/fonts/cmunrm.b4fe383.eot?#iefix) format("embedded-opentype"),
-    url(/static/fonts/cmunrm.6650fdd.woff) format("woff"),
-    url(/static/fonts/cmunrm.01643be.ttf) format("truetype"),
-    url(/static/img/cmunrm.5927a6b.svg#cmunrm) format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Computer Modern Serif";
-  src: url(/static/fonts/cmunti.dcc4660.eot);
-  src: url(/static/fonts/cmunti.dcc4660.eot?#iefix) format("embedded-opentype"),
-    url(/static/fonts/cmunti.0e8efcc.woff) format("woff"),
-    url(/static/fonts/cmunti.86153f0.ttf) format("truetype"),
-    url(/static/img/cmunti.32fb6a6.svg#cmunti) format("svg");
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "Computer Modern Serif Bold";
-  src: url(/static/fonts/cmunbi.c4ddc26.eot);
-  src: url(/static/fonts/cmunbi.c4ddc26.eot?#iefix) format("embedded-opentype"),
-    url(/static/fonts/cmunbi.b2129d3.woff) format("woff"),
-    url(/static/fonts/cmunbi.cd9c040.ttf) format("truetype"),
-    url(/static/img/cmunbi.521ed56.svg#cmunbi) format("svg");
-  font-weight: bold;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "Ionicons";
-  src: url(/static/fonts/ionicons.19e65b8.eot);
-  src: url(/static/fonts/ionicons.19e65b8.eot?#iefix)
-      format("embedded-opentype"),
-    url(/static/fonts/ionicons.2c159d0.woff) format("woff"),
-    url(/static/fonts/ionicons.dd4781d.ttf) format("truetype"),
-    url(/static/img/ionicons.28df6ee.svg?#Ionicons) format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "tos";
-  src: url(/static/fonts/tos-bold.4e7bbb7.eot);
-  src: url(/static/fonts/tos-bold.4e7bbb7.eot?#iefix)
-      format("embedded-opentype"),
-    url(/static/fonts/tos-bold.c3dcc7a.woff) format("woff"),
-    url(/static/fonts/tos-bold.1f8aae2.ttf) format("truetype");
-  font-weight: bold;
-  font-style: italic;
 }
 
 button {
