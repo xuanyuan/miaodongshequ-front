@@ -14,8 +14,8 @@ import {
 Validator.localize('zh_CN', zh_CN); // 设置提示信息中文方式显示
 
 const config = {
-  errorBagName: 'errors',
-  fieldsBagName: 'fields',
+  errorBagName: 'errorBags', // change if property conflicts.
+  fieldsBagName: 'fieldBags',
   delay: 100,
   locale: 'zh_CN',
   strict: true,
@@ -24,6 +24,11 @@ const config = {
   inject: true
 };
 Vue.use(VeeValidate, config); //一般插件都要use一下
+
+
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(ElementUI);
 
 new Vue({
   el: '#app',

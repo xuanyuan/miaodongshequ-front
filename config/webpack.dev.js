@@ -15,7 +15,9 @@ module.exports = {
   },
   output: {
     path: resolve('dist'),
-    filename: '[name].js'
+    filename: '[name].js',
+    chunkFilename: '[name].chunk.js',
+    publicPath: '/'
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
@@ -102,10 +104,10 @@ module.exports = {
     }),
     // If you want a module available as a global variable in every module, 
     // such as making $ and jQuery available in every module without writing require("jquery")
-     new webpack.ProvidePlugin({
-       $: 'jquery',
-       jQuery: 'jquery'
-     }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
+    }),
   ],
   // 配置webpack开发服务功能
   devServer: {
@@ -113,8 +115,8 @@ module.exports = {
     historyApiFallback: true,
     hot: true,
     compress: true,
-    host: 'localhost',
+    host: '0.0.0.0',
     overlay: true,
-    port: 8080
+    port: 8000
   }
 }
