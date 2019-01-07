@@ -34,12 +34,17 @@ const RouteList = [{
         path: 'article',
         // name: 'article',
         component: () => import( /* webpackChunkName: "Article" */ '../component/Admin/Article.vue'),
+      },
+      {
+        path: 'menu',
+        // name: 'article',
+        component: () => import( /* webpackChunkName: "Menu" */ '../component/Admin/Menu.vue'),
       }
     ]
   },
   {
     path: '*',
-    redirect: '/login'
+    redirect: '/admin'
   }
 ]
 

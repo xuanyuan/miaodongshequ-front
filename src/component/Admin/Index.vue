@@ -17,7 +17,7 @@
         <el-row class="tac">
           <el-col :span="24">
             <h5>后台管理</h5>
-            <el-menu default-active="/admin/write"
+            <el-menu default-active="/admin/menu"
                      class="el-menu-vertical-demo"
                      @open="handleOpen"
                      @close="handleClose"
@@ -25,13 +25,17 @@
                      text-color="#fff"
                      router
                      active-text-color="#ffd04b">
-              <el-menu-item index="/admin/write">
+              <!-- <el-menu-item index="/admin/write">
                 <i class="el-icon-location"></i>
                 <span slot="title">导航一</span>
               </el-menu-item>
               <el-menu-item index="/admin/article">
                 <i class="el-icon-menu"></i>
                 <span slot="title">导航二</span>
+              </el-menu-item> -->
+              <el-menu-item index="/admin/menu">
+                <i class="el-icon-goods"></i>
+                <span slot="title">今日菜单</span>
               </el-menu-item>
             </el-menu>
           </el-col>

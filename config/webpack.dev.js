@@ -115,8 +115,14 @@ module.exports = {
     historyApiFallback: true,
     hot: true,
     compress: true,
-    host: '0.0.0.0',
+    host: 'localhost',
     overlay: true,
-    port: 8000
+    port: 8000,
+    proxy: {
+      '/food/*': {
+        target: 'http://localhost:8080',
+        secure: false
+      }
+    }
   }
 }
