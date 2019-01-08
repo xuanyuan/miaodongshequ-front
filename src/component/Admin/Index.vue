@@ -8,7 +8,8 @@
         </el-col>
         <el-col :span="2">
           <el-button size="small"
-                     @click="logout()">安全退出</el-button>
+                     @click="logout()"
+                     round>安全退出</el-button>
         </el-col>
       </el-row>
     </el-header>

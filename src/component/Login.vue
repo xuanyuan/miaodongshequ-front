@@ -73,7 +73,7 @@ export default {
 .el-form {
   margin: 100px auto;
   width: 400px;
-  background: #409eff;
+  background: #f2f6fc;
   color: #fff;
   padding: 20px;
 }
