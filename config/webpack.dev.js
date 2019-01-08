@@ -115,7 +115,7 @@ module.exports = {
     historyApiFallback: true,
     hot: true,
     compress: true,
-    host: 'localhost',
+    host: '0.0.0.0',
     overlay: true,
     port: 8000,
     proxy: {

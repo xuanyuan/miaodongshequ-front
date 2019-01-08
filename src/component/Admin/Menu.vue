@@ -1,53 +1,74 @@
 <template>
   <el-row class="menuBox">
     <el-col :span="12">
-      <el-form ref="form" :model="form" :rules="rules" label-width="80px">
-        <el-form-item label="你是谁" prop="name">
+      <el-form ref="form"
+               :model="form"
+               :rules="rules"
+               label-width="80px">
+        <el-form-item label="你是谁"
+                      prop="name">
           <el-radio-group v-model="form.name">
-            <el-radio v-for="consumer in consumers" :label="consumer" :key="consumer">{{consumer}}</el-radio>
+            <el-radio v-for="consumer in consumers"
+                      :label="consumer"
+                      :key="consumer">{{consumer}}</el-radio>
           </el-radio-group>
         </el-form-item>
-        <el-form-item label="荤菜" prop="checkedMeat">
+        <el-form-item label="荤菜"
+                      prop="checkedMeat">
           <el-checkbox-group v-model="form.checkedMeat">
-            <el-checkbox v-for="meat in meats" :label="meat" :key="meat">{{meat}}</el-checkbox>
+            <el-checkbox v-for="meat in meats"
+                         :label="meat"
+                         :key="meat">{{meat}}</el-checkbox>
           </el-checkbox-group>
         </el-form-item>
-        <el-form-item label="素菜" prop="checkedVegetable">
+        <el-form-item label="素菜"
+                      prop="checkedVegetable">
           <el-checkbox-group v-model="form.checkedVegetable">
-            <el-checkbox v-for="vegetable in vegetables" :label="vegetable" :key="vegetable">{{vegetable}}</el-checkbox>
+            <el-checkbox v-for="vegetable in vegetables"
+                         :label="vegetable"
+                         :key="vegetable">{{vegetable}}</el-checkbox>
           </el-checkbox-group>
         </el-form-item>
-        <el-form-item label="主食" prop="food">
+        <el-form-item label="主食"
+                      prop="food">
           <el-radio-group v-model="form.food">
             <el-radio label="馒头"></el-radio>
             <el-radio label="米饭"></el-radio>
           </el-radio-group>
         </el-form-item>
-        <el-form-item label="在哪吃" prop="place">
+        <el-form-item label="在哪吃"
+                      prop="place">
           <el-radio-group v-model="form.place">
             <el-radio label="食堂"></el-radio>
             <el-radio label="带回"></el-radio>
           </el-radio-group>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" @click="submitForm('form')">立即下单</el-button>
+          <el-button type="primary"
+                     @click="submitForm('form')">立即下单</el-button>
           <el-button @click="resetForm('form')">重置</el-button>
         </el-form-item>
       </el-form>
     </el-col>
-    <el-col :span="12" style="text-align: center;">
-      <img src="../../assets/images/weixin.jpg" alt="">
+    <el-col :span="12"
+            style="text-align: center;">
+      <img src="../../assets/images/qrcode.jpg"
+           style="width:300px;"
+           alt="">
       <div class="text-danger">{{message}}</div>
     </el-col>
   </el-row>
 
 </template>
 <script>
-const consumers = ['张三', '李四', '王五'];
-const meats = ['上海', '北京', '广州', '深圳'];
-const vegetables = ['3333', '12323'];
+const MEATS = "炸火腿片，炒猪头肉，炸腊肠，鱼香肉丝，宫保鸡丁，锅包肉，香菇肉片";
+const VEGETABLES = "炖云豆，炸耦合，炒豆皮，炒杏鲍菇，菠菜鸡蛋，炒绿豆芽，炖白菜，炒千叶豆腐，炒蒜苔，土豆丝";
+const CONSUMERS = "张友锰，田宝磊，王日超，李增凡，江荣展，刘海良，张佃君，王亚婷，张星琳，牟江辉，霍太宇，刘珈羽，朱佰泽，解宗正，王文廷，唐培超"
+const consumers = CONSUMERS.split("，");
+const meats = MEATS.split("，");
+const vegetables = VEGETABLES.split("，");
 export default {
-  data () {
+  data() {
     return {
       form: {
         name: '',
@@ -76,7 +97,7 @@ export default {
     };
   },
   methods: {
-    submitForm (formName) {
+    submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         let form = this.form;
         if (valid) {
@@ -138,7 +159,7 @@ export default {
         }
       });
     },
-    resetForm (formName) {
+    resetForm(formName) {
       this.$refs[formName].resetFields();
     }
   }
