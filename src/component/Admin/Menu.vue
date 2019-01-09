@@ -66,12 +66,6 @@
 
 </template>
 <script>
-const MEATS = "炸火腿片，炒猪头肉，炸腊肠，鱼香肉丝，宫保鸡丁，锅包肉，香菇肉片";
-const VEGETABLES = "炖云豆，炸耦合，炒豆皮，炒杏鲍菇，菠菜鸡蛋，炒绿豆芽，炖白菜，炒千叶豆腐，炒蒜苔，土豆丝";
-const CONSUMERS = "张友锰，田宝磊，王日超，李增凡，江荣展，刘海良，张佃君，王亚婷，张星琳，牟江辉，霍太宇，刘珈羽，朱佰泽，解宗正，王文廷，唐培超"
-const consumers = CONSUMERS.split("，");
-const meats = MEATS.split("，");
-const vegetables = VEGETABLES.split("，");
 export default {
   data() {
     return {
@@ -95,9 +89,9 @@ export default {
       },
       checkAllMeat: false,
       checkAllVegetable: false,
-      meats: meats,
-      vegetables: vegetables,
-      consumers: consumers,
+      meats: [],
+      vegetables: [],
+      consumers: [],
       message: '',
       loading: false
     };
@@ -187,13 +181,28 @@ export default {
   },
   mounted() {
     (async () => {
-      const res = await fetch("/food/order", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json"
+      try {
+        const res = await fetch("/food/order", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json"
+          }
+        });
+        const body = await res.json();
+        if (body.error) {
+          this.$message({
+            message: body.message,
+            type: 'warning'
+          });
         }
-      });
-      console.log(res);
+
+        this.meats = body.menu.meats.split("，");
+        this.vegetables = body.menu.vegetables.split("，");
+        this.consumers = body.consumer;
+
+      } catch (error) {
+        this.$message.error(error.message);
+      }
     })();
   }
 };

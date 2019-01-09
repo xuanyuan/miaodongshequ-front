@@ -20,7 +20,7 @@ const RouteList = [{
   {
     path: '/admin',
     // name: 'admin',
-    component: () => import( /* webpackChunkName: "Admin" */ '../component/Admin/Index.vue'),
+    component: () => import( /* webpackChunkName: "Admin" */ '../component/Admin/Menu.vue'),
     children: [{
         path: '',
         component: import('../component/Admin/Write.vue')

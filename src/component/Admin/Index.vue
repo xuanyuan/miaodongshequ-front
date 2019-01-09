@@ -26,14 +26,14 @@
                      text-color="#fff"
                      router
                      active-text-color="#ffd04b">
-              <!-- <el-menu-item index="/admin/write">
+              <el-menu-item index="/admin/write">
                 <i class="el-icon-location"></i>
                 <span slot="title">导航一</span>
               </el-menu-item>
               <el-menu-item index="/admin/article">
                 <i class="el-icon-menu"></i>
                 <span slot="title">导航二</span>
-              </el-menu-item> -->
+              </el-menu-item>
               <el-menu-item index="/admin/menu">
                 <i class="el-icon-goods"></i>
                 <span slot="title">今日菜单</span>
