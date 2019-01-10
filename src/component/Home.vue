@@ -1,10 +1,12 @@
 <template>
-  <div id="app" class="app">
+  <div id="app"
+       class="app">
     <div class="app-container">
       <div class="nav">
         <div class="nav-container">
           <div class="logo">
-            <a href="/" class="icon">
+            <a href="/"
+               class="icon">
               <img src="../assets/images/logo.png"></a>
             <a href="/">
               <div class="text">
@@ -14,20 +16,25 @@
                   </font>
                 </font>
               </div>
-            </a></div>
+            </a>
+          </div>
           <ul class="links">
-            <li><a href="/blog">
+            <li>
+              <a href="/blog">
                 <font style="vertical-align: inherit;">
                   <font style="vertical-align: inherit;">博客</font>
                 </font>
-              </a></li>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
       <div class="lander page">
         <div class="hero">
-          <a id="subscribe" class="anchor"></a>
-          <Modal :show="showSuccessModal" :type="'success'">
+          <a id="subscribe"
+             class="anchor"></a>
+          <Modal :show="showSuccessModal"
+                 :type="'success'">
             <div class='subscribe-modal'>
               <strong>Success!</strong>
               <br />
@@ -36,16 +43,20 @@
                 只有一件事：要开始接收邮件，我们需要验证您的电子邮件地址。
               </p>
               <p>
-                您可以<b>查看您的电子邮件以获取验证链接</b>吗？ 谢谢！
+                您可以
+                <b>查看您的电子邮件以获取验证链接</b>吗？ 谢谢！
               </p>
               <p>
                 谢谢订阅！ 我们希望您喜欢我们的日常编程问题。
               </p>
-              <button class='green' @click="redirectToSubscribe(email)">我验证了我的电子邮件地址!</button>
+              <button class='green'
+                      @click="redirectToSubscribe(email)">我验证了我的电子邮件地址!</button>
             </div>
           </Modal>
 
-          <Modal :show="showErrorModal" :type="'error'" @close="showErrorModal = false">
+          <Modal :show="showErrorModal"
+                 :type="'error'"
+                 @close="showErrorModal = false">
             <div class='subscribe-modal'>
               <strong>Error!</strong>
               <br />
@@ -55,12 +66,18 @@
                 您应该已收到我们的验证邮件。如果您没有收到，请点击下方以重新收到您的电子邮件。
               </p>
               <p v-if='!this.errors.first("email")'>
-                否则，请通过<a href='mailto:z_dianjun@163.com?Subject=Hello!' target='_top'>z_dianjun@163.com</a>与我们联系，让我们知道发生了什么。
+                否则，请通过
+                <a href='mailto:z_dianjun@163.com?Subject=Hello!'
+                   target='_top'>z_dianjun@163.com</a>与我们联系，让我们知道发生了什么。
               </p>
-              <button v-if='errorMessage === "You are already enrolled to Daily Coding Problem!"' class='green' @click="resendVerificationEmail()">
+              <button v-if='errorMessage === "You are already enrolled to Daily Coding Problem!"'
+                      class='green'
+                      @click="resendVerificationEmail()">
                 重新发送验证电子邮件
               </button>
-              <button @keyup.esc="showErrorModal = false" class='green' @click="showErrorModal = false">Close</button>
+              <button @keyup.esc="showErrorModal = false"
+                      class='green'
+                      @click="showErrorModal = false">Close</button>
             </div>
           </Modal>
           <header>
@@ -71,8 +88,20 @@
             </font>
           </header>
           <div class="cta-container">
-            <form @submit.prevent='getSub' class="email-input">
-              <input type="text" placeholder="输入您的邮箱..." required="required" name="email" data-vv-validate-on="none" autocomplete="off" class="email" v-validate='"required|email"' data-vv-id="1" v-model="email" aria-required="true" aria-invalid="false">
+            <form @submit.prevent='getSub'
+                  class="email-input">
+              <input type="text"
+                     placeholder="输入您的邮箱..."
+                     required="required"
+                     name="email"
+                     data-vv-validate-on="none"
+                     autocomplete="off"
+                     class="email"
+                     v-validate='"required|email"'
+                     data-vv-id="1"
+                     v-model="email"
+                     aria-required="true"
+                     aria-invalid="false">
               <button class="cta dark">
                 <font style="vertical-align: inherit;">
                   <font style="vertical-align: inherit;">
@@ -105,20 +134,15 @@
               <div class="question-content">
                 <p>
                   arrayMax 返回数组中的最大值。
-                  <br>
-                  arrayMin 返回数组中的最小值。
+                  <br> arrayMin 返回数组中的最小值。
                 </p>
                 <p>
                   将Math.max()与扩展运算符 (...) 结合使用以获取数组中的最大值。
-                  <br>
-                  将Math.min()与扩展运算符 (...) 结合使用以获取数组中的最小值。
+                  <br> 将Math.min()与扩展运算符 (...) 结合使用以获取数组中的最小值。
                 </p>
                 <p>
-                  const arrayMax = arr => Math.max(...arr);
-                  // arrayMax([10, 1, 5]) -> 10
-                  <br>
-                  const arrayMin = arr => Math.min(...arr);
-                  // arrayMin([10, 1, 5]) -> 1
+                  const arrayMax = arr => Math.max(...arr); // arrayMax([10, 1, 5]) -> 10
+                  <br> const arrayMin = arr => Math.min(...arr); // arrayMin([10, 1, 5]) -> 1
                 </p>
               </div>
             </div>
@@ -126,14 +150,20 @@
         </div>
 
         <div class="enter-email">
-          <a href="#subscribe"><button class="cta mobile">
+          <a href="#subscribe">
+            <button class="cta mobile">
               <strong>输入邮箱</strong> 订阅JavaScript每日编程技巧
-            </button></a></div> <br> <br> <br>
+            </button>
+          </a>
+        </div> <br> <br> <br>
       </div>
       <footer class="footer">
         <div class="copyright">
           <ul>
-            <li><a href="/" class="copyright">© 秒懂社区 2018</a></li>
+            <li>
+              <a href="/"
+                 class="copyright">© 秒懂社区 2018</a>
+            </li>
           </ul>
         </div>
       </footer>
@@ -215,7 +245,7 @@ export default {
     },
     redirectToSubscribe(email) {
       this.showSuccessModal = false;
-      
+
       const encodedEmail = encodeURIComponent(email);
       // const referrer = cookieManager.getRef();
       if (referrer) {
@@ -469,15 +499,15 @@ footer.footer > .copyright > ul > li > a {
 }
 
 header {
-  font-family: "tos", "Apple Garamond", "Baskerville", "Times New Roman",
-    "Droid Serif", "Times", "Source Serif Pro", serif;
+  font-family: 'tos', 'Apple Garamond', 'Baskerville', 'Times New Roman',
+    'Droid Serif', 'Times', 'Source Serif Pro', serif;
   letter-spacing: 0.5px;
 }
 
 code {
   border-radius: 4px;
-  font-family: Consolas, monaco, "SF Mono", "Monaco", "Inconsolata", "Fira Mono",
-    "Droid Sans Mono", "Source Code Pro", monospace;
+  font-family: Consolas, monaco, 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Mono',
+    'Droid Sans Mono', 'Source Code Pro', monospace;
 }
 
 pre {
@@ -494,7 +524,7 @@ pre {
 .strikeout::after {
   border-bottom: 2px solid #2ab380;
   border-radius: 2px;
-  content: "";
+  content: '';
   left: 0;
   margin-top: calc(1px / 2 * -1);
   position: absolute;
@@ -507,8 +537,8 @@ button {
   padding: 15px 24px;
   border: none;
   outline: none;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif !important;
   -webkit-transition: all 150ms ease-in-out;
   transition: all 150ms ease-in-out;
@@ -575,8 +605,8 @@ input {
   border: none;
   outline: none;
   color: #fff;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif !important;
   -webkit-transition: all 150ms ease-in-out;
   transition: all 150ms ease-in-out;
@@ -747,8 +777,8 @@ div.mini-toastr
 }
 
 .hero > header {
-  font-family: "tos", "Apple Garamond", "Baskerville", "Times New Roman",
-    "Droid Serif", "Times", "Source Serif Pro", serif;
+  font-family: 'tos', 'Apple Garamond', 'Baskerville', 'Times New Roman',
+    'Droid Serif', 'Times', 'Source Serif Pro', serif;
   font-size: 35px;
 }
 
@@ -1021,8 +1051,8 @@ div.mini-toastr
 
 .how-it-works > .steps-container > .step > header {
   font-size: 24px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif !important;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1122,7 +1152,7 @@ div.mini-toastr
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  font-family: "Computer Modern Serif";
+  font-family: 'Computer Modern Serif';
   font-size: 19px;
   line-height: 30px;
   margin: 0 0 24px;
@@ -1232,8 +1262,8 @@ div.mini-toastr
 }
 
 .subscribe-hero > header {
-  font-family: "tos", "Apple Garamond", "Baskerville", "Times New Roman",
-    "Droid Serif", "Times", "Source Serif Pro", serif;
+  font-family: 'tos', 'Apple Garamond', 'Baskerville', 'Times New Roman',
+    'Droid Serif', 'Times', 'Source Serif Pro', serif;
   font-size: 48px;
   margin: 24px 0 0;
 }
@@ -1363,8 +1393,8 @@ div.mini-toastr
 .notification > header {
   padding: 24px 24px 12px;
   font-size: 24px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif !important;
   display: -webkit-box;
   display: -ms-flexbox;

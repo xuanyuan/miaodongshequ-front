@@ -18,9 +18,14 @@ const RouteList = [{
     component: () => import( /* webpackChunkName: "Login" */ '../component/Login.vue'),
   },
   {
+    path: '/menu',
+    name: 'menu',
+    component: () => import( /* webpackChunkName: "Menu" */ '../component/Menu.vue'),
+  },
+  {
     path: '/admin',
     // name: 'admin',
-    component: () => import( /* webpackChunkName: "Admin" */ '../component/Admin/Menu.vue'),
+    component: () => import( /* webpackChunkName: "Admin" */ '../component/Admin/Index.vue'),
     children: [{
         path: '',
         component: import('../component/Admin/Write.vue')
@@ -36,20 +41,20 @@ const RouteList = [{
         component: () => import( /* webpackChunkName: "Article" */ '../component/Admin/Article.vue'),
       },
       {
-        path: 'menu',
-        // name: 'article',
-        component: () => import( /* webpackChunkName: "Menu" */ '../component/Admin/Menu.vue'),
+        path: 'pay',
+        // name: 'pay',
+        component: () => import( /* webpackChunkName: "Pay" */ '../component/Admin/Pay.vue'),
       }
     ]
   },
   {
     path: '*',
-    redirect: '/admin'
+    redirect: '/home'
   }
 ]
 
 export default new Router({
-  // base: __dirname,
+  base: __dirname,
   mode: 'history',
   routes: RouteList
 });

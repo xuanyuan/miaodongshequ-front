@@ -34,9 +34,9 @@
                 <i class="el-icon-menu"></i>
                 <span slot="title">导航二</span>
               </el-menu-item>
-              <el-menu-item index="/admin/menu">
-                <i class="el-icon-goods"></i>
-                <span slot="title">今日菜单</span>
+              <el-menu-item index="/admin/pay">
+                <i class="el-icon-menu"></i>
+                <span slot="title">结账</span>
               </el-menu-item>
             </el-menu>
           </el-col>

@@ -53,10 +53,10 @@
     </el-col>
     <el-col :span="12"
             style="text-align: center;">
-      <img src="../../assets/images/alipay.jpg"
+      <img src="../assets/images/alipay.jpg"
            style="width:300px;"
            alt="">
-      <img src="../../assets/images/weixinpay.jpg"
+      <img src="../assets/images/weixinpay.jpg"
            style="width:300px;"
            alt="">
       <div class="text-info">{{shoppingcart}}</div>
