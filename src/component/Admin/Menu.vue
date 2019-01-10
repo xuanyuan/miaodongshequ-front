@@ -182,8 +182,8 @@ export default {
   mounted() {
     (async () => {
       try {
-        const res = await fetch("/food/order", {
-          method: "GET",
+        const res = await fetch("/food/menus", {
+          method: "POST",
           headers: {
             "Content-Type": "application/json"
           }

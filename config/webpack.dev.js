@@ -120,7 +120,7 @@ module.exports = {
     port: 8000,
     proxy: {
       '/food/*': {
-        target: 'http://localhost:8080'
+        target: 'http://localhost:3000'
       }
     }
   }
