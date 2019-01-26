@@ -24,7 +24,7 @@ const RouteList = [{
   },
   {
     path: '/admin',
-    // name: 'admin',
+    name: 'admin',
     component: () => import( /* webpackChunkName: "Admin" */ '../component/Admin/Index.vue'),
     children: [{
         path: '',
@@ -32,17 +32,17 @@ const RouteList = [{
       },
       {
         path: 'write',
-        // name: 'write',
+        name: 'write',
         component: () => import( /* webpackChunkName: "Write" */ '../component/Admin/Write.vue'),
       },
       {
         path: 'article',
-        // name: 'article',
+        name: 'article',
         component: () => import( /* webpackChunkName: "Article" */ '../component/Admin/Article.vue'),
       },
       {
         path: 'pay',
-        // name: 'pay',
+        name: 'pay',
         component: () => import( /* webpackChunkName: "Pay" */ '../component/Admin/Pay.vue'),
       }
     ]

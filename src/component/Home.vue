@@ -65,7 +65,7 @@
               <p v-if='errorMessage === "You are already enrolled to Daily Coding Problem!"'>
                 您应该已收到我们的验证邮件。如果您没有收到，请点击下方以重新收到您的电子邮件。
               </p>
-              <p v-if='!this.errors.first("email")'>
+              <p v-if='!this.errorBags.first("email")'>
                 否则，请通过
                 <a href='mailto:z_dianjun@163.com?Subject=Hello!'
                    target='_top'>z_dianjun@163.com</a>与我们联系，让我们知道发生了什么。
@@ -233,10 +233,10 @@ export default {
         return;
       }
       let body = await res.json();
-      if (body.error || this.errors.first("email")) {
+      if (body.error || this.errorBags.first("email")) {
         this.errorMessage = body.message;
-        if (this.errors.first("email")) {
-          this.errorMessage = this.errors.first("email");
+        if (this.errorBags.first("email")) {
+          this.errorMessage = this.errorBags.first("email");
         }
         this.showErrorModal = true;
       } else {

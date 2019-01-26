@@ -20,6 +20,8 @@
   "homepage": "https://github.com/xuanyuan/miaodongshequ-front#readme",
   "dependencies": {
     "element-ui": "^2.4.11",
+    "js-cookie": "^2.2.0",
+    "nprogress": "^0.2.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },

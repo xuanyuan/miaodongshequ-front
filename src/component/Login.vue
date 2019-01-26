@@ -26,6 +26,8 @@
 </template>
 
 <script>
+import { setToken } from '@/utils/auth';
+
 export default {
   data() {
     return {
@@ -52,7 +54,8 @@ export default {
             message: 'submit!',
             type: 'success'
           });
-          this.$router.push('admin');
+          setToken("pass");
+          this.$router.push({ name: 'admin' });
         } else {
           this.$message({
             message: 'error submit!!',
