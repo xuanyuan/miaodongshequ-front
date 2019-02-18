@@ -9,20 +9,34 @@
     </el-table-column>
     <el-table-column prop="username"
                      label="姓名"
-                     width="180">
+                     width="120">
+    </el-table-column>
+    <el-table-column prop="menus"
+                     label="菜品"
+                     width="280">
+    </el-table-column>
+    <el-table-column prop="food"
+                     label="主食"
+                     width="100">
+    </el-table-column>
+    <el-table-column prop="place"
+                     label="地点"
+                     width="100">
     </el-table-column>
     <el-table-column prop="cost"
                      label="花销"
                      :summary-method="getSummaries"
-                     width="180">
+                     width="80">
     </el-table-column>
     <el-table-column prop="isPay"
                      sortable
+                     width="150"
                      label="是否买单">
     </el-table-column>
     <el-table-column label="操作">
       <template slot-scope="scope">
         <el-button size="mini"
+                   type="primary"
                    v-show="scope.row.isPay === 0"
                    @click="pay(scope.$index, scope.row)">结账</el-button>
       </template>

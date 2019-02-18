@@ -1,6 +1,9 @@
 <template>
   <el-row class="menuBox">
-    <el-col :span="12">
+    <el-col :xs="24"
+            :sm="24"
+            :md="12"
+            :lg="12">
       <el-form ref="form"
                :model="form"
                :rules="rules"
@@ -51,12 +54,18 @@
         </el-form-item>
       </el-form>
     </el-col>
-    <el-col :span="12"
-            style="text-align: center;">
+    <el-col :xs="24"
+            :sm="24"
+            :md="12"
+            :lg="12"
+            style="">
       <img src="../assets/images/alipay.jpg"
            style="width:300px;"
            alt="">
       <img src="../assets/images/weixinpay.jpg"
+           style="width:300px;"
+           alt="">
+      <img src="../assets/images/redbag.png"
            style="width:300px;"
            alt="">
       <div class="text-info">{{shoppingcart}}</div>
@@ -114,10 +123,14 @@ export default {
 
           let cost = 0;
           if (meatCount === 1 && vegetableCount === 2) {
+            // 一荤两素8块
             cost = 8;
           } else if (meatCount === 0 && vegetableCount === 3) {
+            // 3素7块
             cost = 7;
-          } else if (meatCount === 1 && vegetableCount === 3) {
+          } else if ((meatCount === 1 && vegetableCount === 3) ||
+            (meatCount === 2 && vegetableCount === 1)) {
+            // 一荤3素或者2荤1素
             cost = 9;
           } else if (meatCount === 2 && vegetableCount === 2) {
             // 两荤两素10块
@@ -155,7 +168,9 @@ export default {
                   type: 'success'
                 });
               } else {
-                this.$message.error('订餐失败');
+                this.$alert(body.message || '订餐失败', '警告信息', {
+                  confirmButtonText: '确定'
+                })
               }
             } catch (error) {
               this.$message.error(error.message);
