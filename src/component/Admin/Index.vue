@@ -14,7 +14,7 @@
       </el-row>
     </el-header>
     <el-container>
-      <el-aside width="200px">
+      <el-aside width="150px">
         <el-row class="tac">
           <el-col :span="24">
             <h5>后台管理</h5>

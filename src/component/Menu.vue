@@ -209,12 +209,11 @@ export default {
             message: body.message,
             type: 'warning'
           });
+        } else {
+          this.meats = body.menu.meats.split("，");
+          this.vegetables = body.menu.vegetables.split("，");
+          this.consumers = body.consumer;
         }
-
-        this.meats = body.menu.meats.split("，");
-        this.vegetables = body.menu.vegetables.split("，");
-        this.consumers = body.consumer;
-
       } catch (error) {
         this.$message.error(error.message);
       }

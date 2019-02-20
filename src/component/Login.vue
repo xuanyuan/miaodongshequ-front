@@ -49,7 +49,8 @@ export default {
   methods: {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
-        if (valid) {
+        if (valid && this.ruleForm.username === 'admin' && this.ruleForm.pass === "nicai") {
+
           this.$message({
             message: 'submit!',
             type: 'success'
