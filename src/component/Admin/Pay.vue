@@ -14,17 +14,17 @@
                          label="序号"
                          width="50">
         </el-table-column>
-        <el-table-column prop="no"
-                         label="编号"
-                         width="50">
-        </el-table-column>
         <el-table-column prop="username"
                          label="姓名"
                          width="70">
         </el-table-column>
+        <el-table-column prop="no"
+                         label="编号"
+                         width="50">
+        </el-table-column>
         <el-table-column prop="menus"
                          label="菜品"
-                         width="250">
+                         width="290">
         </el-table-column>
         <el-table-column prop="food"
                          label="主食"
@@ -41,7 +41,7 @@
         </el-table-column>
         <el-table-column prop="isPay"
                          sortable
-                         width="100"
+                         width="80"
                          label="买单">
         </el-table-column>
         <el-table-column label="操作">
@@ -68,17 +68,17 @@
                          label="序号"
                          width="50">
         </el-table-column>
-        <el-table-column prop="no"
-                         label="编号"
-                         width="50">
-        </el-table-column>
         <el-table-column prop="username"
                          label="姓名"
                          width="70">
         </el-table-column>
+        <el-table-column prop="no"
+                         label="编号"
+                         width="50">
+        </el-table-column>
         <el-table-column prop="menus"
                          label="菜品"
-                         width="250">
+                         width="290">
         </el-table-column>
         <el-table-column prop="food"
                          label="主食"
@@ -95,7 +95,7 @@
         </el-table-column>
         <el-table-column prop="isPay"
                          sortable
-                         width="100"
+                         width="80"
                          label="买单">
         </el-table-column>
         <el-table-column label="操作">

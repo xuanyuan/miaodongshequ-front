@@ -47,9 +47,13 @@
           </el-radio-group>
         </el-form-item>
         <el-form-item>
+          <div class="text-info">{{shoppingcart}}</div>
+          <div class="text-danger">{{message}}</div>
+        </el-form-item>
+        <el-form-item>
           <el-button type="primary"
                      :loading="loading"
-                     @click="submitForm('form')">立即下单</el-button>
+                     @click="submitForm('form')">下单</el-button>
           <el-button @click="resetForm('form')">重置</el-button>
         </el-form-item>
       </el-form>
@@ -68,8 +72,6 @@
       <img src="../assets/images/redbag.png"
            style="width:300px;"
            alt="">
-      <div class="text-info">{{shoppingcart}}</div>
-      <div class="text-danger">{{message}}</div>
     </el-col>
   </el-row>
 
